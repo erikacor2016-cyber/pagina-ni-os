@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Misterioso</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: #fff;
+    }
+
+    h1, h2 {
+        text-align: center;
+        color: #ff0000;
+        text-shadow: 0 0 10px red;
+        margin-top: 20px;
+    }
+
+    .pagina {
+        display: none;
+        padding: 20px;
+    }
+
+    .pagina.active {
+        display: block;
+    }
+
+    .contenedor {
+        max-width: 500px;
+        margin: auto;
+        background: rgba(20, 20, 20, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px solid red;
+        box-shadow: 0 0 20px red;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid red;
+        background: #111;
+        color: #fff;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        background: linear-gradient(to right, #ff0000, #660000);
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 0 10px red;
+    }
+
+    button:hover {
+        transform: scale(1.03);
+    }
+
+    .mascara {
+        width: 120px;
+        display: block;
+        margin: 10px auto 20px auto;
+        filter: drop-shadow(0 0 10px red);
+    }
+
+    .pregunta {
+        margin: 20px 0;
+        font-size: 1.1rem;
+    }
+
+    .resultado {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 1.4rem;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- PANTALLA INICIAL -->
+<div id="inicio" class="pagina active">
+    <h1>TE ATREVES A CONOCER LA VERDAD</h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/482/482058.png" class="mascara">
+
+    <div class="contenedor">
+        <label>Nombre o apodo:</label>
+        <input type="text" id="nombre">
+
+        <label>¿Eres mayor de edad?</label>
+        <select id="mayor">
+            <option value="">Selecciona</option>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select>
+
+        <label>Fecha de nacimiento:</label>
+        <input type="date" id="nacimiento">
+
+        <label>Género:</label>
+        <select id="genero">
+            <option value="">Selecciona</option>
+            <option value="femenino">Femenino</option>
+            <option value="masculino">Masculino</option>
+            <option value="otro">Otro</option>
+        </select>
+
+        <button onclick="validarInicio()">Continuar</button>
+    </div>
+</div>
+
+<!-- PREGUNTAS -->
+<div id="preguntas" class="pagina">
+    <h2>Responde con sinceridad...</h2>
+
+    <div class="contenedor">
+
+        <div class="pregunta">
+            1. ¿te gusta arrbia o abajo?
+            <input type="text" id="p1">
+        </div>
+
+        <div class="pregunta">
+            2. ¿te gusta comer de todo o eres exclusivo?
+            <input type="text" id="p2">
+        </div>
+
+        <div class="pregunta">
+            3. ¿te gusta tamaño grande, pequeño o depense?
+            <input type="text" id="p3">
+        </div>
+
+        <div class="pregunta">
+            4. ¿te parece mejor con la boca o con la mano?
+            <input type="text" id="p4">
+        </div>
+
+        <div class="pregunta">
+            5. ¿eres de llevar la iniciativa si o no?
+            <input type="text" id="p5">
+        </div>
+
+        <div class="pregunta">
+            6. ¿te concideras caliente si o no?
+            <input type="text" id="p6">
+        </div>
+
+        <div class="pregunta">
+            7. ¿te gusta la agrecividad o no?
+            <input type="text" id="p7">
+        </div>
+
+        <button onclick="finalizar()">Finalizar test</button>
+    </div>
+</div>
+
+<!-- RESULTADO -->
+<div id="resultado" class="pagina">
+    <h2>Resultado del Test</h2>
+
+    <div class="contenedor">
+        <p class="resultado" id="textoResultado"></p>
+
+        <button onclick="volverAlInicio()" class="boton-volver">Volver al Inicio</button>
+    </div>
+</div>
+
+<script>
+function validarInicio() {
+    let mayor = document.getElementById("mayor").value;
+    let nombre = document.getElementById("nombre").value;
+
+    if (nombre === "" || mayor === "") {
+        alert("Completa todos los campos.");
+        return;
+    }
+
+    if (mayor === "no") {
+        alert("Acceso denegado. Debes ser mayor de edad.");
+        return;
+    }
+
+    document.getElementById("inicio").classList.remove("active");
+    document.getElementById("preguntas").classList.add("active");
+}
+
+function finalizar() {
+    let respuestas = [
+        document.getElementById("p1").value.toLowerCase(),
+        document.getElementById("p2").value.toLowerCase(),
+        document.getElementById("p3").value.toLowerCase(),
+        document.getElementById("p4").value.toLowerCase(),
+        document.getElementById("p5").value.toLowerCase(),
+        document.getElementById("p6").value.toLowerCase(),
+        document.getElementById("p7").value.toLowerCase()
+    ];
+
+    let positivo = respuestas.filter(r =>
+        r.includes("arriba") ||
+        r.includes("exclusiva") ||
+        r.includes("depende") ||
+        r.includes("boca") ||
+        r.includes("sí") ||
+        r.includes("si") ||
+        r.includes("si") ||
+        r.includes("fuerte")
+    ).length >= 3;
+
+    let texto = positivo ?
+        "Resultado positivo: eres una bich en la cama." :
+        "Resultado negativo: eres tranquis.";
+
+    document.getElementById("textoResultado").innerText = texto;
+
+    document.getElementById("preguntas").classList.remove("active");
+    document.getElementById("resultado").classList.add("active");
+}
+
+function volverAlInicio() {
+    document.getElementById("resultado").classList.remove("active");
+    document.getElementById("inicio").classList.add("active");
+}
+</script>
+
+</body>
+</html>
+
