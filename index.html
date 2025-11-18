@@ -1,115 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Postulación Auxiliar Administrativo</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-    body{
-        font-family: Arial, sans-serif;
-        background: #f2f2f2;
-        margin: 0;
-        padding: 20px;
-    }
-    .container{
-        max-width: 700px;
-        margin: auto;
-        background: #fff;
-        padding: 25px;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    h1, h2{
-        text-align: center;
-        color: #333;
-    }
-    .btn{
-        display: block;
-        width: 100%;
-        background: #0077ff;
-        color: #fff;
-        padding: 15px;
-        text-align: center;
-        border-radius: 8px;
-        text-decoration: none;
-        margin-bottom: 20px;
-        font-size: 18px;
-    }
-    label{
-        display: block;
-        margin-top: 15px;
-        font-weight: bold;
-    }
-    input, textarea, button{
-        width: 100%;
-        padding: 10px;
-        margin-top: 8px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        font-size: 16px;
-    }
-    button{
-        background: #28a745;
-        color: #fff;
-        font-size: 18px;
-        cursor: pointer;
-        margin-top: 20px;
-    }
-    button:hover{
-        background: #218838;
-    }
-</style>
+    <meta charset="UTF-8">
+    <title>Vacante Auxiliar Administrativo</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #e7f0ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #23b1e9;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1fa57d;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #ce56a0;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #mensajeExito {
+            background: #d5e8ff;
+            color: #60affa;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            text-align: center;
+            max-width: 500px;
+            margin: 30px auto;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function mostrarFormulario() {
+            document.getElementById("paginaVacante").style.display = "none";
+            document.getElementById("paginaFormulario").style.display = "block";
+        }
+
+        function mostrarExito() {
+            document.getElementById("paginaFormulario").style.display = "none";
+            document.getElementById("mensajeExito").style.display = "block";
+        }
+    </script>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>Información de la Vacante</h1>
-    <p><strong>📌 Cargo:</strong> Auxiliar Administrativo</p>
-    <p><strong>📍 Ubicación:</strong> Bogotá, Colombia</p>
-    <p><strong>💰 Salario:</strong> $2.000.000 + prestaciones de ley</p>
-    <p><strong>🕒 Horario:</strong> Lunes a viernes – 8:00 am a 5:00 pm</p>
-    <p><strong>📄 Contrato:</strong> Término fijo con opción de renovación</p>
-    <p><strong>🎓 Estudios:</strong> Técnico o Tecnólogo administrativo</p>
-    <p><strong>🧠 Experiencia:</strong> Mínimo 1 año</p>
-    <p><strong>💻 Conocimientos:</strong> Manejo de Excel, archivo, comunicaciones</p>
+    <header>
+        <h1>Vacante: Auxiliar Administrativo</h1>
+    </header>
 
-    <a href="#formulario" class="btn">Postúlate Aquí</a>
-</div>
+    <!-- PÁGINA PRINCIPAL -->
+    <section id="paginaVacante">
+        <h2>Información de la Vacante</h2>
 
-<br>
+        <p>📌 <b>Cargo:</b> Auxiliar Administrativo</p>
+        <p>📍 <b>Ubicación:</b> Bogotá, Colombia</p>
+        <p>💰 <b>Salario:</b> $2.000.000 + todas las prestaciones de ley</p>
+        <p>🕒 <b>Horario:</b> Lunes a viernes – 8:00 am a 5:00 pm</p>
+        <p>📄 <b>Contrato:</b> Término fijo con opción de renovación</p>
+        <p>🎓 <b>Estudios:</b> Técnico o Tecnólogo administrativo</p>
+        <p>🧠 <b>Experiencia:</b> Mínimo 1 año</p>
+        <p>💻 <b>Conocimientos:</b> Manejo de Excel, archivo, comunicaciones</p>
 
-<div class="container" id="formulario">
-    <h2>Formulario de Postulación</h2>
+        <br>
 
-    <form action="https://formspree.io/f/xzzynray" method="POST" enctype="multipart/form-data">
+        <a class="btn" href="#" onclick="mostrarFormulario(); return false;">
+            Ingresar al Formulario
+        </a>
+    </section>
 
-        <label>Nombre Completo:</label>
-        <input type="text" name="nombre" required>
+    <!-- FORMULARIO -->
+    <section id="paginaFormulario" class="hidden">
+        <h2 style="text-align:center;">Formulario de Aplicación</h2>
 
-        <label>Número de Contacto:</label>
-        <input type="text" name="telefono" required>
+        <form action="https://formspree.io/f/xzzynray" method="POST" onsubmit="mostrarExito(); return true;">
 
-        <label>Correo Electrónico:</label>
-        <input type="email" name="email" required>
+            <label>Nombre completo</label>
+            <input name="Nombre" type="text" required>
 
-        <label>Perfil Laboral:</label>
-        <textarea name="perfil_laboral" rows="4" placeholder="Escribe aquí tu perfil profesional"></textarea>
+            <label>Correo electrónico</label>
+            <input name="Correo" type="email" required>
 
-        <label>Sube tu Última Experiencia (PDF, imagen o documento):</label>
-        <input type="file" name="ultima_experiencia" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+            <label>Número de contacto</label>
+            <input name="Teléfono" type="tel" required>
 
-        <label>Sube tus Estudios Académicos (PDF, imagen o documento):</label>
-        <input type="file" name="estudios" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+            <label>Experiencia Profesional</label>
+            <textarea name="Experiencia Profesional" rows="4"></textarea>
 
-        <label>Habilidades:</label>
-        <textarea name="habilidades" placeholder="Ej: Excel, comunicación, trabajo en equipo"></textarea>
+            <label>Experiencia Laboral</label>
+            <textarea name="Experiencia Laboral" rows="4"></textarea>
 
-        <label>Cursos Realizados:</label>
-        <textarea name="cursos" placeholder="Ej: Excel intermedio, atención al cliente, archivo documental"></textarea>
+            <label>¿Por qué quieres aplicar a este cargo?</label>
+            <textarea name="Motivo" rows="4"></textarea>
 
-        <button type="submit">Enviar Postulación</button>
-    </form>
-</div>
+            <button type="submit" class="btn" style="width:100%;">Enviar Formulario</button>
+        </form>
+    </section>
+
+    <!-- MENSAJE DE ÉXITO -->
+    <div id="mensajeExito">
+        ⭐ Gracias por postularte.  
+        Muy pronto nos comunicaremos contigo. ⭐
+    </div>
 
 </body>
 </html>
