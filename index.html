@@ -1,203 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convocatoria Auxiliar Administrativo</title>
-
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        header {
-            background-color: #11a8b3;
-            color: white;
-            width: 100%;
-            padding: 30px 0;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        main {
-            width: 90%;
-            max-width: 850px;
-            padding: 20px 0;
-        }
-
-        #convocatoria-info {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        #convocatoria-info h2 {
-            color: #669ed6;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-        }
-
-        .requisitos-list ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            display: inline-block;
-        }
-
-        .requisitos-list li {
-            padding: 6px 0;
-            font-size: 1.1em;
-        }
-
-        .btn-aplicar {
-            display: inline-block;
-            background-color: #ff9900;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .btn-aplicar:hover {
-            background-color: #e68a00;
-        }
-
-        #formulario-aplicacion {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        #formulario-aplicacion h2 {
-            color: #004d99;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        input[type="text"], input[type="tel"], input[type="email"], textarea, input[type="file"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            margin-top: 5px;
-            font-size: 1em;
-        }
-
-        textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        button[type="submit"] {
-            background-color: #28a745;
-            color: white;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-top: 30px;
-            width: 100%;
-            cursor: pointer;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #218838;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Postulación Auxiliar Administrativo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+    }
+    .container{
+        max-width: 700px;
+        margin: auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1, h2{
+        text-align: center;
+        color: #333;
+    }
+    .btn{
+        display: block;
+        width: 100%;
+        background: #0077ff;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        border-radius: 8px;
+        text-decoration: none;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    label{
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+    input, textarea, button{
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+    button{
+        background: #28a745;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    button:hover{
+        background: #218838;
+    }
+</style>
 </head>
 <body>
 
-<header>
-    <h1>Vacante: Auxiliar Administrativo</h1>
-    <p>Únete a nuestro equipo y crece profesionalmente</p>
-</header>
+<div class="container">
+    <h1>Información de la Vacante</h1>
+    <p><strong>📌 Cargo:</strong> Auxiliar Administrativo</p>
+    <p><strong>📍 Ubicación:</strong> Bogotá, Colombia</p>
+    <p><strong>💰 Salario:</strong> $2.000.000 + prestaciones de ley</p>
+    <p><strong>🕒 Horario:</strong> Lunes a viernes – 8:00 am a 5:00 pm</p>
+    <p><strong>📄 Contrato:</strong> Término fijo con opción de renovación</p>
+    <p><strong>🎓 Estudios:</strong> Técnico o Tecnólogo administrativo</p>
+    <p><strong>🧠 Experiencia:</strong> Mínimo 1 año</p>
+    <p><strong>💻 Conocimientos:</strong> Manejo de Excel, archivo, comunicaciones</p>
 
-<main>
-    <section id="convocatoria-info">
-        <h2>Información de la Vacante</h2>
-        <div class="requisitos-list">
-            <ul>
-                <li>📌 Cargo: Auxiliar Administrativo</li>
-                <li>📍 Ubicación: Bogotá, Colombia</li>
-                <li>💰 Salario: $2.000.000 + todas las prestaciones de ley</li>
-                <li>🕒 Horario: Lunes a viernes – 8:00 am a 5:00 pm</li>
-                <li>📄 Contrato: Término fijo con opción de renovación</li>
-                <li>🎓 Estudios: Técnico o Tecnólogo administrativo</li>
-                <li>🧠 Experiencia: Mínimo 1 año</li>
-                <li>💻 Conocimientos: Manejo de Excel, archivo, comunicaciones</li>
-            </ul>
-        </div>
-        
-        <a href="#formulario-aplicacion" class="btn-aplicar">Postúlate Aquí</a>
-    </section>
+    <a href="#formulario" class="btn">Postúlate Aquí</a>
+</div>
 
-    <section id="formulario-aplicacion">
+<br>
 
-        <h2>Formulario de Postulación</h2>
+<div class="container" id="formulario">
+    <h2>Formulario de Postulación</h2>
 
-        <!-- FORMULARIO CON FORMSPREE -->
-        <form action="https://formspree.io/f/xzzynray" method="POST" enctype="multipart/form-data">
-            <label>Nombre Completo:</label>
-            <input type="text" name="nombre" required>
+    <form action="https://formspree.io/f/xzzynray" method="POST" enctype="multipart/form-data">
 
-            <label>Número de Contacto:</label>
-            <input type="tel" name="telefono" required>
+        <label>Nombre Completo:</label>
+        <input type="text" name="nombre" required>
 
-            <label>Correo Electrónico:</label>
-            <input type="email" name="email" required>
+        <label>Número de Contacto:</label>
+        <input type="text" name="telefono" required>
 
-            <label>Perfil Laboral:</label>
-            <textarea name="perfil" placeholder="Escribe aquí tu perfil profesional" required></textarea>
+        <label>Correo Electrónico:</label>
+        <input type="email" name="email" required>
 
-            <label>Sube tu Última Experiencia (PDF, imagen o documento):</label>
-            <input type="file" name="experiencia" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required>
+        <label>Perfil Laboral:</label>
+        <textarea name="perfil_laboral" rows="4" placeholder="Escribe aquí tu perfil profesional"></textarea>
 
-            <label>Sube tus Estudios Académicos (PDF, imagen o documento):</label>
-            <input type="file" name="estudios" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required>
+        <label>Sube tu Última Experiencia (PDF, imagen o documento):</label>
+        <input type="file" name="ultima_experiencia" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
 
-            <label>Habilidades:</label>
-            <textarea name="habilidades" placeholder="Ej: Excel, comunicación, trabajo en equipo" required></textarea>
+        <label>Sube tus Estudios Académicos (PDF, imagen o documento):</label>
+        <input type="file" name="estudios" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
 
-            <label>Cursos Realizados:</label>
-            <textarea name="cursos" placeholder="Ej: Excel intermedio, atención al cliente, archivo documental" required></textarea>
+        <label>Habilidades:</label>
+        <textarea name="habilidades" placeholder="Ej: Excel, comunicación, trabajo en equipo"></textarea>
 
-            <button type="submit">Enviar Postulación</button>
-        </form>
-    </section>
+        <label>Cursos Realizados:</label>
+        <textarea name="cursos" placeholder="Ej: Excel intermedio, atención al cliente, archivo documental"></textarea>
 
-</main>
-
-<footer>
-    <p>&copy; 2025 Empresa de Selección | Todos los derechos reservados</p>
-</footer>
+        <button type="submit">Enviar Postulación</button>
+    </form>
+</div>
 
 </body>
 </html>
